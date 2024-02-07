@@ -9,10 +9,12 @@ public class motion : MonoBehaviour
     public int x;
     public int y;
     public bool canMove;
+    Rigidbody2D rb;
 
     private void Awake()
     {
         canMove = true;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -34,6 +36,7 @@ public class motion : MonoBehaviour
         Vector2 currentPosition = new Vector2(
             transform.position.x,
             transform.position.y
+
             );
 
         if (currentPosition == CalcularDireccion(x, y))
