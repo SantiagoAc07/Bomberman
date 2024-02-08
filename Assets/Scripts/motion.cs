@@ -5,55 +5,61 @@ using UnityEngine;
 public class motion : MonoBehaviour
 {
 
-    public float speed;
-    public int x;
-    public int y;
-    public bool canMove;
-    Rigidbody2D rb;
+    public new Rigidbody2D rigidbody { get; private set; }
+    private Vector2 direction = Vector2.down;
+    public float speed = 5.0f;
+
+    public KeyCode inputUp = KeyCode.W;
+    public KeyCode inputDown = KeyCode.S;
+    public KeyCode inputLeft = KeyCode.A;
+    public KeyCode inputRight = KeyCode.D;
+
 
     private void Awake()
     {
-        canMove = true;
-        rb = GetComponent<Rigidbody2D>();
+        rigidbody = GetComponent<Rigidbody2D>();
     }
+
 
     private void Update()
     {
-        int moveX = (int)Input.GetAxisRaw("Horizontal");
-        int moveY = (int)Input.GetAxisRaw("Vertical");
-        if (moveX != 0 && canMove)
+        if (Input.GetKey(inputUp))
         {
-            x += moveX;
-            canMove = false;
+            direction = Vector2.up;
+        }
+        else if (Input.GetKey(inputDown))
+        {
+            direction = Vector2.down;
+        }
+        else if (Input.GetKey(inputLeft))
+        {
+            direction = Vector2.left;
+        }
+        else if (Input.GetKey(inputRight))
+        {
+            direction = Vector2.right;
         }
 
-        if (moveY != 0 && canMove)
+        else
         {
-            y += moveY;
-            canMove = false;
+            SetDirection(Vector2.zero);
+
         }
-
-        Vector2 currentPosition = new Vector2(
-            transform.position.x,
-            transform.position.y
-
-            );
-
-        if (currentPosition == CalcularDireccion(x, y))
-        {
-            canMove = true;
-        }
-
     }
 
     private void FixedUpdate()
     {
-        Vector2 finalPosition = CalcularDireccion(x, y);
-        transform.position = Vector2.MoveTowards(transform.position, finalPosition, speed);
-    }
+        Vector2 position = rigidbody.position;
+        Vector2 translation = direction * speed * Time.fixedDeltaTime;
 
-    Vector2 CalcularDireccion(int x, int y)
+        rigidbody.MovePosition(position + translation);
+
+    }
+    private void SetDirection(Vector2 newDirection)
     {
-        return new Vector2(x + 0.5f, y + 0.5f);
+        {
+            direction = newDirection;
+        }
     }
 }
+
