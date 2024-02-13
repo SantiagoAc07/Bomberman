@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Indestructible
+  - Explosion
   layers:
   - Default
   - TransparentFX
@@ -12,9 +13,9 @@ TagManager:
   - 
   - Water
   - UI
+  - Explosion
   - 
-  - 
-  - 
+  - Bomb
   - 
   - 
   - 

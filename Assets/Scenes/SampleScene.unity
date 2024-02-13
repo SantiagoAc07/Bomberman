@@ -389,7 +389,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 412ec5788c2e44e09dc0310ec1e33e32, type: 3}
   - {fileID: 21300000, guid: 7fd24e5b7681419e89ef7202db21c58b, type: 3}
   - {fileID: 21300000, guid: e4cc123f4a724fda863a936e2f1f4334, type: 3}
-  animationTime: 0.25
+  animationTime: 0.5
   loop: 1
   idle: 1
 --- !u!212 &184622305
@@ -458,11 +458,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bombPrefab: {fileID: 1420511026255284604, guid: 4aa5bab05fe75fb458905f3ad47dd748, type: 3}
   inputKey: 32
-  bombFuseTime: 3
-  bombAmount: 1
-  explosionPrefab: {fileID: 0}
-  explosionDuration: 1
-  explosionRadius: 1
+  bombFuseTime: 2
+  bombAmount: 2
+  explosionPrefab: {fileID: 8387667546825343602, guid: 60f935e7173ae944b8a3321ddcf168c9, type: 3}
+  explosionDuration: 3
+  explosionRadius: 3
 --- !u!1 &201200763
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,7 +539,7 @@ SpriteRenderer:
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 88873a4b430e4164ab470bcb1bdbd1e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 3.6, y: 3}
@@ -582,7 +582,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5fe2d4db6528455f83c3d014f45836fe, type: 3}
   - {fileID: 21300000, guid: 0704fb19db924357972d482b52bf010f, type: 3}
   - {fileID: 21300000, guid: c53116c276174cf79a68fe3365e46ac0, type: 3}
-  animationTime: 0.1
+  animationTime: 0.01
   loop: 1
   idle: 1
 --- !u!1 &248727913
@@ -3963,7 +3963,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5fe2d4db6528455f83c3d014f45836fe, type: 3}
   - {fileID: 21300000, guid: 0704fb19db924357972d482b52bf010f, type: 3}
   - {fileID: 21300000, guid: c53116c276174cf79a68fe3365e46ac0, type: 3}
-  animationTime: 0.1
+  animationTime: 0.01
   loop: 1
   idle: 1
 --- !u!1 &1360123438
@@ -7876,7 +7876,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9ce3b8b9279e450aa881b6dd6e01c05e, type: 3}
   - {fileID: 21300000, guid: 9f7262fcc0f4479b8116fcfb1ea5ced0, type: 3}
   - {fileID: 21300000, guid: b85c6cbc8d69483bbd1085ec5c7c9a4f, type: 3}
-  animationTime: 0.1
+  animationTime: 0.01
   loop: 1
   idle: 1
 --- !u!1 &1783401921
@@ -7998,7 +7998,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 02cada8ee7eb4e6081d6fccfd83c48d4, type: 3}
   - {fileID: 21300000, guid: ea025bc742fc4305846ab2e6f5eea494, type: 3}
   - {fileID: 21300000, guid: 2518db6aa034464490b5442803eab53a, type: 3}
-  animationTime: 0.1
+  animationTime: 0.01
   loop: 1
   idle: 1
 --- !u!1660057539 &9223372036854775807

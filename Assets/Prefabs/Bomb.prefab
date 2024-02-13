@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 6031255956887847914}
   - component: {fileID: 2824386629544032262}
   - component: {fileID: 3149545531248846198}
-  m_Layer: 0
+  - component: {fileID: 8139360516151902409}
+  m_Layer: 6
   m_Name: Bomb
-  m_TagString: Untagged
+  m_TagString: Explosion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 1420511026255284604}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.52, y: -2.36, z: 0.015378611}
-  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -184,3 +185,22 @@ MonoBehaviour:
   animationTime: 0.25
   loop: 1
   idle: 0
+--- !u!114 &8139360516151902409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420511026255284604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f3716a84698c14898b5d3138a81733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombPrefab: {fileID: 1420511026255284604}
+  inputKey: 32
+  bombFuseTime: 3
+  bombAmount: 1
+  explosionPrefab: {fileID: 8387667546825343602, guid: 60f935e7173ae944b8a3321ddcf168c9, type: 3}
+  explosionDuration: 1
+  explosionRadius: 1

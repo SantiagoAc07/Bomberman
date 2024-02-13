@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class motion : MonoBehaviour
@@ -23,6 +24,7 @@ public class motion : MonoBehaviour
     public AnimatedSpriteRenderer spriteRendererRight;
     private AnimatedSpriteRenderer activeSpriteRenderer;
 
+    
 
 
 
@@ -70,7 +72,7 @@ public class motion : MonoBehaviour
         } else if (Input.GetKey(inputLeft)){
             SetDirection(Vector2.left, spriteRendererLeft);
         } else if (Input.GetKey(inputRight)){
-            SetDirection(Vector2.right, spriteRendererRight); 
+            SetDirection(Vector2.right, spriteRendererRight);            
         } else {
             SetDirection(Vector2.zero, activeSpriteRenderer);
         }
