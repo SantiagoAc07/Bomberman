@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UIElements;
+using UnityEngine.Tilemaps;
 
 public class BombController : MonoBehaviour
 {
@@ -14,6 +17,7 @@ public class BombController : MonoBehaviour
 
     [Header("Explosion")]
     public GameObject explosionPrefab;
+    public LayerMask explosionLayerMask;
     public float explosionDuration = 1f;
     public int explosionRadius = 1;
 
@@ -45,19 +49,34 @@ public class BombController : MonoBehaviour
         position.x = Mathf.Round(position.x);
         position.y = Mathf.Round(position.y);
 
-        GameObject Explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
+        
+
+        Explode(position, Vector2.up, explosionRadius);
+        Explode(position, Vector2.down, explosionRadius);
+        Explode(position, Vector2.left, explosionRadius);
+        Explode(position, Vector2.right, explosionRadius);
+
         
          
+
         Destroy(bomb);
+        
         bombsRemaining++;
     
-}
-    private void OnTriggerExit2D(Collider2D other)
-    {
-       if (other.gameObject.layer == LayerMask.NameToLayer("Explosion"))
-        {
-            other.isTrigger = false;
-        }
     }
+    private void Explode(Vector2 position, Vector2 direction, int length)
+    {
+        if (length >= 0) { 
+            return;
+        }
 
+        position += direction;
+        GameObject explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
+        explosion.SetActiveRenderer(length > 1 ? explosion : null);
+        explosion.SetDirection(direction);
+        explosion.DestroyAfter(explosionDuration);
+        Destroy(Explosion.gameObject, explosionDuration);
+
+        Explode(position, direction, length - 1);
+    }
 }

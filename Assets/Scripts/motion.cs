@@ -35,34 +35,6 @@ public class motion : MonoBehaviour
         activeSpriteRenderer = spriteRendererDown;
     }
 
-
-    /*private void Update()
-    {
-        if (Input.GetKey(inputUp))
-        {
-             direction = Vector2.up;
-        }
-        else if (Input.GetKey(inputDown))
-        {
-            direction = Vector2.down;
-        }
-        else if (Input.GetKey(inputLeft))
-        {
-            direction = Vector2.left;
-        }
-        else if (Input.GetKey(inputRight))
-        {
-            direction = Vector2.right;
-        }
-
-        else
-        {
-            SetDirection(Vector2.zero);
-            
-
-        }
-    }*/
-
     private void Update()
     {
         if (Input.GetKey(inputUp)){

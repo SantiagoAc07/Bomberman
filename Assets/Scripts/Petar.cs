@@ -20,6 +20,13 @@ public class Petar : MonoBehaviour
 
     }
 
+    public void DestroyAfter (float seconds)
+    {
+        Destroy(gameObject, seconds);
+        
+    }
     
+        
+  
 
 }

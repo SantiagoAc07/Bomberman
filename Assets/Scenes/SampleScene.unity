@@ -461,8 +461,8 @@ MonoBehaviour:
   bombFuseTime: 2
   bombAmount: 2
   explosionPrefab: {fileID: 8387667546825343602, guid: 60f935e7173ae944b8a3321ddcf168c9, type: 3}
-  explosionDuration: 3
-  explosionRadius: 3
+  explosionDuration: 4
+  explosionRadius: 2
 --- !u!1 &201200763
 GameObject:
   m_ObjectHideFlags: 0
