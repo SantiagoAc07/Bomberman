@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -5,7 +6,7 @@ using UnityEngine;
 
 public class Petar : MonoBehaviour
 {
-    public AnimatedSpriteRenderer Explosion;
+    public static AnimatedSpriteRenderer Explosion;
 
 
     public void SetActiveRenderer(AnimatedSpriteRenderer renderer)
@@ -25,8 +26,9 @@ public class Petar : MonoBehaviour
         Destroy(gameObject, seconds);
         
     }
-    
-        
-  
 
+    internal void SetActiveRenderer(GameObject gameObject)
+    {
+        throw new NotImplementedException();
+    }
 }

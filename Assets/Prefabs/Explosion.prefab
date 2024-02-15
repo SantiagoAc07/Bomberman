@@ -262,4 +262,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c7c263f7f4914877b268874746ad3bfa, type: 3}
   animationTime: 0.5
   loop: 0
-  idle: 0
+  idle: 1
