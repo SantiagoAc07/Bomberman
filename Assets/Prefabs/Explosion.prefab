@@ -260,6 +260,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 546319e5bce5432ba7b5368255c25e76, type: 3}
   - {fileID: 21300000, guid: f66797e67a6442ebaedb84e8bf244f07, type: 3}
   - {fileID: 21300000, guid: c7c263f7f4914877b268874746ad3bfa, type: 3}
-  animationTime: 0.5
+  animationTime: 0.25
   loop: 0
-  idle: 1
+  idle: 0
