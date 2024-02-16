@@ -31,4 +31,9 @@ public class Petar : MonoBehaviour
     {
         throw new NotImplementedException();
     }
+
+    private void OnDestroy()
+    {
+        Destroy(gameObject);
+    }
 }

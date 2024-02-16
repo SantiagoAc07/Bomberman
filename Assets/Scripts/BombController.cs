@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Tilemaps;
 
 public class BombController : MonoBehaviour
 {
@@ -19,6 +21,13 @@ public class BombController : MonoBehaviour
     public float explosionDuration = 1f;
     public int explosionRadius = 1;
     public LayerMask explosionLayerMask;
+
+    [Header("Destructible")]
+    public Tilemap destructibleTiles;
+    public GameObject destructiblePrefab;
+
+
+
 
     #endregion
 
@@ -78,6 +87,12 @@ public class BombController : MonoBehaviour
 
         Explode(position, direction, length - 1);
 
+        if (Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayerMask))
+        {
+            
+            return;
+        }
+
         if (length > 1)
         {
             Instantiate(explosionPrefab, position, Quaternion.identity);
@@ -86,11 +101,24 @@ public class BombController : MonoBehaviour
         // Handle explosion effects
         if (Physics2D.OverlapCircle(position, explosionRadius, explosionLayerMask))
         {
-            // Implement explosion effects on objects within the radius
+            Vector3Int cell = destructibleTiles.WorldToCell(position);
+            TileBase tile = destructibleTiles.GetTile(cell);
+            if (tile != null)
+            {
+                Instantiate(destructiblePrefab, position, Quaternion.identity);
+                destructibleTiles.SetTile(cell, tile);
+            }
         }
 
-
-    }
-
-    #endregion
+       // private void ClearDestructible(Vector2 position)
+       // {
+        //    Vector3Int cell = destructibleTiles.WorldToCell(position);
+       //     TileBase tile = destructibleTiles.GetTile(cell);
+        //    if (tile != null)
+         //   {
+        //       Destroy(tile);
+         //   }
+        }
 }
+#endregion
+
