@@ -184,7 +184,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e4f714cfb894436e9de4729308d056ce, type: 3}
   animationTime: 0.25
   loop: 0
-  idle: 1
+  idle: 0
 --- !u!114 &8139360516151902409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,3 +204,8 @@ MonoBehaviour:
   explosionPrefab: {fileID: 8387667546825343602, guid: 60f935e7173ae944b8a3321ddcf168c9, type: 3}
   explosionDuration: 2
   explosionRadius: 4
+  explosionLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  destructibleTiles: {fileID: 0}
+  destructiblePrefab: {fileID: 6105583866364518402, guid: f128eac0f2ee1d74e83e6bdd2f31813c, type: 3}

@@ -99,15 +99,23 @@ public class BombController : MonoBehaviour
         }
 
         // Handle explosion effects
-        if (Physics2D.OverlapCircle(position, explosionRadius, explosionLayerMask))
+        Collider2D[] detecteds = Physics2D.OverlapCircleAll(position, explosionRadius, explosionLayerMask);
+        foreach (var item in detecteds)
         {
-            Vector3Int cell = destructibleTiles.WorldToCell(position);
+            Destroy(item.gameObject);
+        }
+
+        if (detecteds.Length >= 1)
+            //si detecta una caja con el overlaopCircle entonces destruye la caja que detecta
+        {
+            
+           /* Vector3Int cell = destructibleTiles.WorldToCell(position);
             TileBase tile = destructibleTiles.GetTile(cell);
             if (tile != null)
             {
                 Instantiate(destructiblePrefab, position, Quaternion.identity);
                 destructibleTiles.SetTile(cell, tile);
-            }
+            }*/
         }
 
        // private void ClearDestructible(Vector2 position)
