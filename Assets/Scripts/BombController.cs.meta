@@ -6,6 +6,8 @@ MonoImporter:
   defaultReferences:
   - bombPrefab: {fileID: 1420511026255284604, guid: 4aa5bab05fe75fb458905f3ad47dd748, type: 3}
   - explosionPrefab: {fileID: 8387667546825343602, guid: 60f935e7173ae944b8a3321ddcf168c9, type: 3}
+  - destructibleTiles: {fileID: 5654688584637259999, guid: 5e41ef9d0a2cf4a908b229740b77263e, type: 3}
+  - destructiblePrefab: {fileID: 5893912260514781334, guid: 5e41ef9d0a2cf4a908b229740b77263e, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
