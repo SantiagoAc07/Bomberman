@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class Destructible : MonoBehaviour
 {
     public float destructionTime = 1f;
-    
+    public BombController controller;
 
     [Range(0f, 1f)]
     public float itemSpawnChance = 0.2f;
@@ -14,16 +15,17 @@ public class Destructible : MonoBehaviour
 
     private void Start()
     {
-        
+       
 
-        Destroy(gameObject, destructionTime);
+        
     }
 
     private void OnDestroy()
     {
-        if (spawnableItems.Length > 0 && Random.value < itemSpawnChance)
+        if (spawnableItems.Length > 0 && Random.value < itemSpawnChance && gameObject)
         {
             int randomIndex = Random.Range(0, spawnableItems.Length);
+            Destroy(gameObject, destructionTime);
             Instantiate(spawnableItems[randomIndex], transform.position, Quaternion.identity);
         }
     }

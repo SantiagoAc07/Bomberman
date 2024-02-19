@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Tilemaps;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
 public class BombController : MonoBehaviour
@@ -42,7 +43,7 @@ public class BombController : MonoBehaviour
 
     private void Update()
     {
-        if (bombsRemaining > 0 && Input.GetKeyDown(inputKey))
+        if (bombsRemaining > 0 && Input.GetKeyDown(inputKey))   //Comprueba si hay bombas disponibles y si se presiona la tecla de colocar bomba
         {
             StartCoroutine(PlaceBomb());
         }
@@ -52,27 +53,28 @@ public class BombController : MonoBehaviour
 
     #region Coroutines
 
-    private IEnumerator PlaceBomb()
+    private IEnumerator PlaceBomb()  //Nombre corrutina
     {
-        Vector2 position = transform.position;
-        position.x = Mathf.Round(position.x);
-        position.y = Mathf.Round(position.y);
+        Vector2 position = transform.position; //Obtiene la posición actual del objeto
+        position.x = (position.x);  //Redondea las coordenadas de la posición a valores enteros
+        position.y = (position.y);
 
-        GameObject bomb = Instantiate(bombPrefab, position, Quaternion.identity);
-        bombsRemaining--;
+        GameObject bomb = Instantiate(bombPrefab, position, Quaternion.identity);  //Crea una instancia del prefab de la bomba en la posición calculada
+        bombsRemaining--;                                                          //Disminuye la cantidad de bombas disponibles
 
-        yield return new WaitForSeconds(bombFuseTime);
+        yield return new WaitForSeconds(bombFuseTime);               //Suspende la ejecución de la corrutina durante bombFuseTime segundos.
+                                                                     //Simula el tiempo de mecha de la bomba antes de la explosión.
 
-        position = bomb.transform.position;
-        position.x = Mathf.Round(position.x);
-        position.y = Mathf.Round(position.y);
+        position = bomb.transform.position;                         //Obtiene la posición de la bomba después de la espera.
+        position.x = (position.x);
+        position.y = (position.y);
 
-        Explode(position, Vector2.up, explosionRadius);
+        Explode(position, Vector2.up, explosionRadius);            //Repite la lógica de explosión en las 4 direcciones cardinales (arriba, abajo, izquierda y derecha).
         Explode(position, Vector2.down, explosionRadius);
         Explode(position, Vector2.left, explosionRadius);
         Explode(position, Vector2.right, explosionRadius);
 
-        Destroy(bomb);
+        Destroy(bomb);                                            
         bombsRemaining++;
     }
 
@@ -80,10 +82,10 @@ public class BombController : MonoBehaviour
 
     #region Explosion
 
-    private void Explode(Vector2 position, Vector2 direction, int length)
+    private void Explode(Vector2 position, Vector2 direction, int length)  //Posición actual de la explosión, Dirección en la que se propaga la explosión., Longitud restante de la explosión.
     {
         if (length < 0)
-            return;
+            return;                                  //Si la longitud es menor a 0, la explosión se detiene en esa dirección.
 
         position += direction;
 
@@ -95,7 +97,7 @@ public class BombController : MonoBehaviour
             return;
         }
 
-        if (length > 1)
+        if (length >= 1)
         {
             Instantiate(explosionPrefab, position, Quaternion.identity);
         }
@@ -120,14 +122,7 @@ public class BombController : MonoBehaviour
             }
         }
 
-        // private void ClearDestructible(Vector2 position)
-        // {
-        //  Vector3Int cell = destructibleTiles.WorldToCell(position);
-        //  TileBase tile = destructibleTiles.GetTile(cell);
-        //  if (tile != null)
-        // {
-        //   Destroy(tile);
-        // }
+     
     }
 
     public void AddBomb()
