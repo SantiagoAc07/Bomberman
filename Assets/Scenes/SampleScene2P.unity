@@ -494,7 +494,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: ac2c13a2a867444c9ed448eb9743658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa5760bb3e0a4031a8ae00744fbfe88b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -800,7 +800,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184622298}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 66011ff6034b81a409f7da7afe9efedf, type: 2}
   m_CullingMode: 1
@@ -911,7 +911,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: ac2c13a2a867444c9ed448eb9743658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ffebaad578d432ba50b89ac9c099b35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -934,7 +934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53766586c2bca1c488949432f9389f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleSprite: {fileID: 21300000, guid: 75822dbf147e4a95936537f1e4bb8783, type: 3}
+  idleSprite: {fileID: 21300000, guid: 8ffebaad578d432ba50b89ac9c099b35, type: 3}
   animationSprites:
   - {fileID: 21300000, guid: 8ffebaad578d432ba50b89ac9c099b35, type: 3}
   - {fileID: 21300000, guid: a75f39e9a5ff4a02ae3f08a96e07b6a7, type: 3}
@@ -958,7 +958,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c53116c276174cf79a68fe3365e46ac0, type: 3}
   animationTime: 0.01
   loop: 1
-  idle: 1
+  idle: 0
 --- !u!1 &215588148
 GameObject:
   m_ObjectHideFlags: 0
@@ -4446,7 +4446,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: acd32bd8a1df446f8e315b4fbb81fcc6, type: 3}
   animationTime: 0.01
   loop: 1
-  idle: 1
+  idle: 0
 --- !u!212 &430261319
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5893,7 +5893,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: ac2c13a2a867444c9ed448eb9743658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ffebaad578d432ba50b89ac9c099b35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5916,7 +5916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53766586c2bca1c488949432f9389f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleSprite: {fileID: 21300000, guid: 75822dbf147e4a95936537f1e4bb8783, type: 3}
+  idleSprite: {fileID: 21300000, guid: 8ffebaad578d432ba50b89ac9c099b35, type: 3}
   animationSprites:
   - {fileID: 21300000, guid: 8ffebaad578d432ba50b89ac9c099b35, type: 3}
   - {fileID: 21300000, guid: a75f39e9a5ff4a02ae3f08a96e07b6a7, type: 3}
@@ -5940,7 +5940,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c53116c276174cf79a68fe3365e46ac0, type: 3}
   animationTime: 0.01
   loop: 1
-  idle: 1
+  idle: 0
 --- !u!1 &1072521696
 GameObject:
   m_ObjectHideFlags: 0
@@ -5994,8 +5994,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 40c3735a92104bf0a371de6864667177, type: 3}
   - {fileID: 21300000, guid: 9864ad02539b4e3d96717c7c59cabf4b, type: 3}
   animationTime: 0.01
-  loop: 1
-  idle: 1
+  loop: 0
+  idle: 0
 --- !u!212 &1072521698
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6231,7 +6231,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: acd32bd8a1df446f8e315b4fbb81fcc6, type: 3}
   animationTime: 0.01
   loop: 1
-  idle: 1
+  idle: 0
 --- !u!212 &1145845147
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6482,7 +6482,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f11c56fcf5eb44a8b76eacbeb3ff8380, type: 3}
   animationTime: 0.01
   loop: 1
-  idle: 1
+  idle: 0
 --- !u!212 &1306939435
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9514,7 +9514,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b85c6cbc8d69483bbd1085ec5c7c9a4f, type: 3}
   animationTime: 0.01
   loop: 1
-  idle: 1
+  idle: 0
 --- !u!1 &1783401921
 GameObject:
   m_ObjectHideFlags: 0
@@ -9612,7 +9612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53766586c2bca1c488949432f9389f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleSprite: {fileID: 21300000, guid: 605f151e9b2f4d1090791d30532c5124, type: 3}
+  idleSprite: {fileID: 21300000, guid: ac2c13a2a867444c9ed448eb9743658b, type: 3}
   animationSprites:
   - {fileID: 21300000, guid: ac2c13a2a867444c9ed448eb9743658b, type: 3}
   - {fileID: 21300000, guid: 95629eeb514c4efbb7968d4b31cda28d, type: 3}
