@@ -55,37 +55,41 @@ public class BombController : MonoBehaviour
 
     private IEnumerator PlaceBomb()  //Nombre corrutina
     {
-        Vector2 position = transform.position; //Obtiene la posición actual del objeto
-        position.x = (position.x);  //Redondea las coordenadas de la posición a valores enteros
+        Vector2 position = transform.position; //Obtiene la posici?n actual del objeto
+        position.x = (position.x);  //Redondea las coordenadas de la posici?n a valores enteros
         position.y = (position.y);
 
-        GameObject bomb = Instantiate(bombPrefab, position, Quaternion.identity);  //Crea una instancia del prefab de la bomba en la posición calculada
+        GameObject bomb = Instantiate(bombPrefab, position, Quaternion.identity);  //Crea una instancia del prefab de la bomba en la posici?n calculada
         bombsRemaining--;                                                          //Disminuye la cantidad de bombas disponibles
 
-        yield return new WaitForSeconds(bombFuseTime);               //Suspende la ejecución de la corrutina durante bombFuseTime segundos.
-                                                                     //Simula el tiempo de mecha de la bomba antes de la explosión.
+        yield return new WaitForSeconds(bombFuseTime);               //Suspende la ejecuci?n de la corrutina durante bombFuseTime segundos.
+                                                                     //Simula el tiempo de mecha de la bomba antes de la explosi?n.
 
-        position = bomb.transform.position;                         //Obtiene la posición de la bomba después de la espera.
+        position = bomb.transform.position;                         //Obtiene la posici?n de la bomba despu?s de la espera.
         position.x = (position.x);
         position.y = (position.y);
 
-        Explode(position, Vector2.up, explosionRadius);            //Repite la lógica de explosión en las 4 direcciones cardinales (arriba, abajo, izquierda y derecha).
+        
+
+        Explode(position, Vector2.up, explosionRadius);            //Repite la l?gica de explosi?n en las 4 direcciones cardinales (arriba, abajo, izquierda y derecha).
         Explode(position, Vector2.down, explosionRadius);
         Explode(position, Vector2.left, explosionRadius);
         Explode(position, Vector2.right, explosionRadius);
 
         Destroy(bomb);                                            
         bombsRemaining++;
+      
+
     }
 
     #endregion
 
     #region Explosion
 
-    private void Explode(Vector2 position, Vector2 direction, int length)  //Posición actual de la explosión, Dirección en la que se propaga la explosión., Longitud restante de la explosión.
+    private void Explode(Vector2 position, Vector2 direction, int length)  //Posici?n actual de la explosi?n, Direcci?n en la que se propaga la explosi?n., Longitud restante de la explosi?n.
     {
         if (length < 0)
-            return;                                  //Si la longitud es menor a 0, la explosión se detiene en esa dirección.
+            return;                                  //Si la longitud es menor a 0, la explosi?n se detiene en esa direcci?n.
 
         position += direction;
 

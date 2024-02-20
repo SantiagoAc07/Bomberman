@@ -561,7 +561,7 @@ MonoBehaviour:
   bombAmount: 1
   explosionPrefab: {fileID: 8387667546825343602, guid: 60f935e7173ae944b8a3321ddcf168c9, type: 3}
   explosionDuration: 1
-  explosionRadius: 2
+  explosionRadius: 1
   explosionLayerMask:
     serializedVersion: 2
     m_Bits: 8

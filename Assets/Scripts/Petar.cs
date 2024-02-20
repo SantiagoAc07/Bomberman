@@ -35,5 +35,6 @@ public class Petar : MonoBehaviour
     private void OnDestroy()
     {
         Destroy(gameObject);
+        Destroy(Explosion);
     }
 }

@@ -25,8 +25,9 @@ public class Destructible : MonoBehaviour
         if (spawnableItems.Length > 0 && Random.value < itemSpawnChance && gameObject)
         {
             int randomIndex = Random.Range(0, spawnableItems.Length);
-            Destroy(gameObject, destructionTime);
+            
             Instantiate(spawnableItems[randomIndex], transform.position, Quaternion.identity);
+            Destroy(gameObject, destructionTime);
         }
     }
 }
