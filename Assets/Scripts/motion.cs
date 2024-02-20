@@ -73,14 +73,14 @@ public class motion : MonoBehaviour
         direction = newDirection;  //Esta l?nea establece la nueva direcci?n de movimiento.
 
 
-            spriteRendererUp.enabled = spriteRenderer == spriteRendererUp; //Esta l?nea activa o desactiva el spriteRendererUp dependiendo de si es el
-                                                                           //spriteRenderer que se est? pasando como argumento
-            spriteRendererDown.enabled = spriteRenderer == spriteRendererDown;
-            spriteRendererLeft.enabled = spriteRenderer == spriteRendererLeft;
-            spriteRendererRight.enabled = spriteRenderer == spriteRendererRight;
+        spriteRendererUp.enabled = spriteRenderer == spriteRendererUp; //Esta l?nea activa o desactiva el spriteRendererUp dependiendo de si es el
+                                                                        //spriteRenderer que se est? pasando como argumento
+        spriteRendererDown.enabled = spriteRenderer == spriteRendererDown;
+        spriteRendererLeft.enabled = spriteRenderer == spriteRendererLeft;
+        spriteRendererRight.enabled = spriteRenderer == spriteRendererRight;
 
-            activeSpriteRenderer = spriteRenderer;  // Esta l?nea cambia la referencia del activeSpriteRenderer al que se pas? como argumento.
-            activeSpriteRenderer.idle = direction == Vector2.zero; //Esta l?nea establece el estado idle del activeSpriteRenderer
+        activeSpriteRenderer = spriteRenderer;  // Esta l?nea cambia la referencia del activeSpriteRenderer al que se pas? como argumento.
+        activeSpriteRenderer.idle = direction == Vector2.zero; //Esta l?nea establece el estado idle del activeSpriteRenderer
 
     }
 
@@ -96,7 +96,7 @@ public class motion : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider2D other)
+    private void OnColliderEnter(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Explosion"))
         {
@@ -104,17 +104,20 @@ public class motion : MonoBehaviour
         
         }
     }
-
 private void DeathSequence()
     {
         enabled = false;
         GetComponent<BombController>().enabled = false;
+
+
 
         spriteRendererUp.enabled = false;
         spriteRendererDown.enabled = false;
         spriteRendererLeft.enabled = false;
         spriteRendererRight.enabled = false;
         spriteRendererDeath.enabled = true;
+
+        activeSpriteRenderer = spriteRendererDeath;
 
         Invoke(nameof(OnDeathSequenceEnded), 1.25f);
     }
@@ -124,6 +127,10 @@ private void OnDeathSequenceEnded()
         gameObject.SetActive(false);
     }
 
+  
+
+
+ 
 }
 
 

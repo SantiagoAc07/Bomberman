@@ -18,6 +18,11 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void PlayTwoPlayer()
+    {
+        SceneManager.LoadScene(2);
+    }
+
     public void Options()
     {
         OptionsWindow.SetActive(true);
