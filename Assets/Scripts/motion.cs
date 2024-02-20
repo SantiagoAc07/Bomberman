@@ -29,6 +29,9 @@ public class motion : MonoBehaviour
     public AnimatedSpriteRenderer spriteRendererLeft;
 
     public AnimatedSpriteRenderer spriteRendererRight;
+
+    public AnimatedSpriteRenderer spriteRendererDeath; //muere
+
     private AnimatedSpriteRenderer activeSpriteRenderer;  //Muestra la animaci[on del personaje
 
     
@@ -92,6 +95,35 @@ public class motion : MonoBehaviour
         rigidbody.MovePosition(position + translation);
 
     }
+
+    private void OnTriggerEnter(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Explosion"))
+        {
+            DeathSequence();
+        
+        }
     }
+
+private void DeathSequence()
+    {
+        enabled = false;
+        GetComponent<BombController>().enabled = false;
+
+        spriteRendererUp.enabled = false;
+        spriteRendererDown.enabled = false;
+        spriteRendererLeft.enabled = false;
+        spriteRendererRight.enabled = false;
+        spriteRendererDeath.enabled = true;
+
+        Invoke(nameof(OnDeathSequenceEnded), 1.25f);
+    }
+
+private void OnDeathSequenceEnded()
+    {
+        gameObject.SetActive(false);
+    }
+
+}
 
 

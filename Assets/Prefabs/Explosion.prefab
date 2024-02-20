@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2896439911450247926}
   - component: {fileID: 5225290632642178918}
   - component: {fileID: 9195764691721556083}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Peta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 3360375556653825847}
   - component: {fileID: 542820163844152036}
   - component: {fileID: 5824739535501717268}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}

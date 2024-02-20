@@ -76,7 +76,8 @@ public class BombController : MonoBehaviour
         Explode(position, Vector2.left, explosionRadius);
         Explode(position, Vector2.right, explosionRadius);
 
-        Destroy(bomb);                                            
+        Destroy(bomb);
+        Destroy(explosionPrefab);
         bombsRemaining++;
       
 
