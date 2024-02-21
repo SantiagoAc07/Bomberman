@@ -9016,26 +9016,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4947601342000403264, guid: 2da5438149f089b46a0ff4844f0e9bb7, type: 3}
-      propertyPath: inputKey
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 7595942178598519307, guid: 2da5438149f089b46a0ff4844f0e9bb7, type: 3}
-      propertyPath: inputUp
-      value: 119
-      objectReference: {fileID: 0}
-    - target: {fileID: 7595942178598519307, guid: 2da5438149f089b46a0ff4844f0e9bb7, type: 3}
-      propertyPath: inputDown
-      value: 115
-      objectReference: {fileID: 0}
-    - target: {fileID: 7595942178598519307, guid: 2da5438149f089b46a0ff4844f0e9bb7, type: 3}
-      propertyPath: inputLeft
-      value: 97
-      objectReference: {fileID: 0}
-    - target: {fileID: 7595942178598519307, guid: 2da5438149f089b46a0ff4844f0e9bb7, type: 3}
-      propertyPath: inputRight
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 8030635006136138604, guid: 2da5438149f089b46a0ff4844f0e9bb7, type: 3}
       propertyPath: m_Name
       value: Player1
@@ -9053,29 +9033,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2496294468447521284, guid: c3f5c52bf3a7185459d5287dc478a313, type: 3}
-      propertyPath: inputKey
-      value: 303
-      objectReference: {fileID: 0}
     - target: {fileID: 2752970710215531930, guid: c3f5c52bf3a7185459d5287dc478a313, type: 3}
       propertyPath: m_Name
       value: Player2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2854495818621712686, guid: c3f5c52bf3a7185459d5287dc478a313, type: 3}
-      propertyPath: inputUp
-      value: 273
-      objectReference: {fileID: 0}
-    - target: {fileID: 2854495818621712686, guid: c3f5c52bf3a7185459d5287dc478a313, type: 3}
-      propertyPath: inputDown
-      value: 274
-      objectReference: {fileID: 0}
-    - target: {fileID: 2854495818621712686, guid: c3f5c52bf3a7185459d5287dc478a313, type: 3}
-      propertyPath: inputLeft
-      value: 276
-      objectReference: {fileID: 0}
-    - target: {fileID: 2854495818621712686, guid: c3f5c52bf3a7185459d5287dc478a313, type: 3}
-      propertyPath: inputRight
-      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 3656442149753889426, guid: c3f5c52bf3a7185459d5287dc478a313, type: 3}
       propertyPath: m_LocalPosition.x
