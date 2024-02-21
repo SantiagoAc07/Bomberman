@@ -36,14 +36,16 @@ public class BombController : MonoBehaviour
 
     #region Unity Methods
 
-    private void OnEnable()
+    private void OnEnable()                                //Inicializa bombsRemaining a bombAmount cuando se habilita el objeto.
     {
         bombsRemaining = bombAmount;
     }
 
     private void Update()
     {
-        if (bombsRemaining > 0 && Input.GetKeyDown(inputKey))   //Comprueba si hay bombas disponibles y si se presiona la tecla de colocar bomba
+        if (bombsRemaining > 0 && Input.GetKeyDown(inputKey))   //Comprueba si hay bombas disponibles
+                                                                //y si se presiona la tecla de colocar bomba
+                                                                //para iniciar corrutina
         {
             StartCoroutine(PlaceBomb());
         }
@@ -87,31 +89,36 @@ public class BombController : MonoBehaviour
 
     #region Explosion
 
-    private void Explode(Vector2 position, Vector2 direction, int length)  //Posici?n actual de la explosi?n, Direcci?n en la que se propaga la explosi?n., Longitud restante de la explosi?n.
+    private void Explode(Vector2 position, Vector2 direction, int length)  //Posici?n actual de la explosi?n,
+                                                                           //Direcci?n en la que se propaga
+                                                                           //la explosi?n., Longitud restante de la explosi?n.
     {
         if (length < 0)
             return;                                  //Si la longitud es menor a 0, la explosi?n se detiene en esa direcci?n.
+                        
+        position += direction;                       //Mueve la posición de la explosión en la dirección especificada (direction).
 
-        position += direction;
+        Explode(position, direction, length - 1);    //Llama a Explode de nuevo de forma recursiva con length decrementado.
 
-        Explode(position, direction, length - 1);
-
-        if (Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayerMask))
+        if (Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayerMask))  //Detiene la recursividad
+                                                                                       //si encuentra un objeto
+                                                                                       //sólido usando Physics2D.OverlapBox.
         {
 
             return;
         }
 
-        if (length >= 1)
+        if (length >= 1)       //Crea el efecto visual de explosión si length es mayor que 0
         {
             Instantiate(explosionPrefab, position, Quaternion.identity);
         }
 
         // Handle explosion effects
         Collider2D[] detecteds = Physics2D.OverlapCircleAll(position, explosionRadius, explosionLayerMask);
+        //Detecta objetos dentro del radio de explosión usando Physics2D.OverlapCircleAll
         foreach (var item in detecteds)
         {
-            Destroy(item.gameObject);
+            Destroy(item.gameObject);   //Destruye todos los GameObjects de los objetos detectados.
         }
 
         if (detecteds.Length >= 1)
@@ -124,6 +131,11 @@ public class BombController : MonoBehaviour
             {
               Instantiate(destructiblePrefab, position, Quaternion.identity);
               destructibleTiles.SetTile(cell, tile);
+
+                //Convierte la posición en una coordenada de celda de mosaico.
+                //Obtiene el mosaico en esa celda
+                //Si existe un mosaico, instancia el destructiblePrefab,
+                //reemplaza el mosaico antiguo y actualiza el Tilemap.
             }
         }
 

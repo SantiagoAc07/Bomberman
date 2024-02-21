@@ -38,6 +38,7 @@ public class ItemPickup : MonoBehaviour
        if (other.CompareTag("Player"))
         {
             OnItemPickup(other.gameObject);
+            
         } 
     }
 }
